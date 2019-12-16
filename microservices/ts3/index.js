@@ -20,4 +20,17 @@ app.post("/", function (req, res, next) {
 })
 
 
+app.get("/liveliness", function(req, res, next) {
+    res.status(200).json({
+        message: "success"
+    })
+})
+
+app.get("/readiness", function(req, res, next){
+     res.status(200).json({
+        message: "success"
+    })
+})
+
+
 app.listen(config.ports.ts3, () => console.log(`ts3 app listening on port ${config.ports.ts3}!`))
