@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ts1
+  namespace: dev
+
+containers:
+  - image:  amanmeghrajnai/ts1
+    name:  ts1-image
+    env: 
+      - name: TS1_HOST
+        value: localhost
+      - name: TS2_HOST
+        value: localhost
+      - name: TS3_HOST
+        value: localhost
+      - name: TS1_PORT
+        value: 3001
+      - name: TS2_PORT
+        value: 3002
+      - name: TS3_PORT
+        value: 3003
+        
