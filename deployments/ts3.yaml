@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts3-deployment
+  namespace: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ts3
+  template:
+    metadata:
+      labels:
+        app: ts3
+    spec:
+      containers:
+      - name: ts3
+        image: amanmeghrajani/ts3
+        ports:
+        - containerPort: 3003

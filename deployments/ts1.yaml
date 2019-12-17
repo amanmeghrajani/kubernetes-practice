@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts1-deployment
+  namespace: dev
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: ts1
+  template:
+    metadata:
+      labels:
+        type : microservice
+        app : ts1
+    spec:
+      containers:
+        - image: amanmeghrajani/ts1
+          name: ts1-image
+          ports:
+            - containerPort: 3001
+
+    

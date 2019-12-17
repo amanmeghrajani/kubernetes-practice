@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts2-deployment
+  namespace: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ts2
+  template:
+    metadata:
+      labels: 
+        app: ts2
+    spec:
+      containers:
+      - name: ts2
+        image: amanmeghrajani/ts2
+        ports:
+        - containerPort: 3002
